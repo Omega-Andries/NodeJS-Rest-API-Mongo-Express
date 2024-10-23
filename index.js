@@ -14,6 +14,9 @@ mongoose.connect(process.env.LOCAL_DB_URL);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Serving static files
+app.use(express.static('assets'));
+
 routes(app);
 
 app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
